@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  database:
+    image: postgres:9.6.9-alpine
+    environment:
+      POSTGRES_USER: 'aeto'
+      POSTGRES_PASSWORD: 'aeto'
+      POSTGRES_DB: 'inventory'
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./docker/seed/postgresql:/docker-entrypoint-initdb.d
