@@ -1,6 +1,17 @@
 version: '2.1'
 
 services:
+  user-service:
+    build: .
+    # image: registry.gitlab.com/idgst/springboot-mongo-demo:latest
+    restart: always
+    container_name: inventory-user-service
+    ports:
+      - 8080:8080
+    working_dir: /UserService
+    depends_on:
+      - database
+
   database:
     image: postgres:9.6.9-alpine
     environment:

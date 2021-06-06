@@ -1,4 +1,4 @@
-package com.aeto.userservice.user.model;
+package com.aeto.userservice.user.entity;
 
 import lombok.Data;
 
